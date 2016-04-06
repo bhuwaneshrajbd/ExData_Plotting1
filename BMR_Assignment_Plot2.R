@@ -11,6 +11,6 @@ datetime <- paste(as.Date(Subdata$Date), Subdata$Time)
 Subdata$Datetime <- as.POSIXct(datetime)
 
 ##Saving the graph as Plot2.png
-plot(Subdata$Global_active_power~Subdata$Datetime, type="l", ylab="Global Active Power (kilowatts)", xlab="")
+plot(as.numeric(Subdata$Global_active_power)~Subdata$Datetime, type="l", ylab="Global Active Power (kilowatts)", xlab="")
 dev.copy(png, file="Plot2.png", height=480, width=480)
 dev.off()
