@@ -11,8 +11,7 @@ datetime <- paste(as.Date(Subdata$Date), Subdata$Time)
 Subdata$Datetime <- as.POSIXct(datetime)
 
 ##Getting Graphical Plot of the subset data "Subdata"
-globalActivePower <- as.numeric(subset_data$Global_active_power)
-hist(globalActivePower, xlab = "Global Active Power (kilowatts)", ylab = "Frequency", main = "Global Active Power", col = "red")
+hist(as.numeric(Subdata$Global_active_power), xlab = "Global Active Power (kilowatts)", ylab = "Frequency", main = "Global Active Power", col = "red")
 
 ##Saving the graph as Plot1.png
 dev.copy(png, file="Plot1.png", height=480, width=480)
